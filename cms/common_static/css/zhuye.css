@@ -1,0 +1,101 @@
+body{
+	background-color:#dddee7;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-image: url(http://www.yeahzan.com/zanblog/wp-content/themes/zanblog2_1_0/ui/images/bg.jpg);
+	background-repeat: repeat;
+}
+div img {
+	width: 100%;
+	height: 100%;
+}
+.navbar-header a{
+	font-size: 3em;
+	margin-left: 30%;
+}
+#login {
+	height: 350px;
+}
+#login button{
+      margin-top: 20px;
+}
+#login input {
+	margin-bottom: 29px;
+}
+
+#style3 {
+	height: 5%;
+}
+
+#first {
+	margin-top: 15%;
+	margin-left: 10%;
+}
+#second {
+	margin-top: 5%;
+	margin-left:10%;
+}
+#page {
+	background-color: #ffffff;
+	#border: 1px solid red;
+	margin-top: 7%;
+	margin-left: -5%;
+
+}
+#cir {
+	background-color: #778899;
+    border-color: #d43f3a;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 100px;
+    margin-left: -45px;
+    margin-top: -45px;
+    color: white;
+    padding-top: 10px;
+    font-size: 2em;
+}
+.mon {
+	display: block;
+	font-size: 0.6em;
+	margin-left: 20px;
+	margin-top: -4px;
+}
+.day {
+	display: block;
+	margin-top: -45px;
+	margin-left: 12px;
+	font-size: 1.3em;
+}
+.title-article {
+	margin-top: 50px;
+	font-size: 3em;
+	text-align: center;
+}
+.title-article a:hover {
+	text-decoration: none;
+}
+.center{
+	width:auto;
+	position:absolute;
+	bottom:1%;
+	left:40%;
+
+}
+.list{
+	position:absolute;
+	left:40%;
+
+}
+#suit{
+	#positon:relative;
+	#top:3.8em;
+	#left:4.5em;
+	#padding-top:3em;
+	#padding-left: 10em;
+	background-color:white;
+}

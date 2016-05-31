@@ -1,0 +1,89 @@
+{% load staticfiles %}
+{% include 'yg_cms/base_header.html' %}
+		<div class="content-body">
+			<div class="container">
+				<div class="row">
+					<main class="col-md-12">
+						<h1 class="page-title">关于本站开发</h1>
+						<article class="post">
+							<div class="entry-content clearfix">
+                                    <h3 class="text-center"></h3>
+                                <p class="text-left">
+                                    从开始学习Django到最后的网站上线用了差不多一个月的时间，开始是按着教程做，所有的代码都是手动敲了一遍。
+                                    在这还想说一句，对于一个教程而言，开始的时候要粗略的看，认清自己想要实现的功能，
+                                    直到一个粗略的网站模型出来，然后再回去重新看一遍教程，找到自己忽略的。对我而言
+                                    第二次看的时候就是再看下教程提供了哪些功能，即使现在没有用到也要记得有这些东西，往往
+                                    这会成为后续功能实现的时候的灵感源泉。最后要摆脱教程了， 往往到最后你想要的功能教程
+                                    只有简略的描述，这时候就要去看Django文档了。大概学习路线就是这个样子吧。
+                                </p><br>
+                                <p>
+                                    其实这是第三个版本，第一个版本纯粹是为了满足自己网站部署到服务器上可以访问的快感，第
+                                    二个版本基本上就是正常使用了。可我自己对它不满意，又重新改了模板，别的基本没怎么变。
+                                </p><br>
+                                <p>
+                                    这一个月有很深的开发感触，因为要不断的学习，了解不同的知识，比如，学习Django
+                                    的模板功能，这就要求你有基本的前端功底，能看懂前端代码，最好还要能写一些
+                                    ，之前因为写过一些前端页面，所以这方面问题不大；尝试服务器
+                                    部署，采用的是CentOS，要学会部署安装环境，这就要会基本的Linux命令，还要学点Vi命令；
+                                    开发过程中代码要托管，就顺手学了Git；用到Cookie和Session时就要去看相关的协议，
+                                    还复习了下TCP/IP。等等等等。在这段时间认识到Web后端开发是一个很大的方面，
+                                    要学的东西有很多很多，不断学习才能不断成长。真正有了码而不思则农的想法。
+                                </p><br>
+                                <p>
+                                    最后贴出学习过程中看过的相关教程地址：
+                                </p>
+                                <p>
+                                    Bootstrap教程: <a href="http://v3.bootcss.com/" target="_blank">http://v3.bootcss.com/</a>
+                                </p>
+                                <p>
+                                    Python教程： <a href="http://www.liaoxuefeng.com/" target="_blank">http://www.liaoxuefeng.com/</a>
+                                </p>
+                                <p>
+                                    Django教程： <a href="http://www.ziqiangxuetang.com/django/django-tutorial.html"
+                                                    target="_blank">
+                                    http://www.ziqiangxuetang.com/django/django-tutorial.html
+                                    </a>
+                                </p>
+                                <p>
+                                    Django文档：<br>英文版：<a href="https://docs.djangoproject.com/en/1.9/"
+                                                        target="_blank">
+                                    https://docs.djangoproject.com/en/1.9/
+                                            </a><br>中文版：<a href="http://python.usyiyi.cn/django/index.html"
+                                                           target="_blank">
+                                    http://python.usyiyi.cn/django/index.html
+                                    </a>
+                                </p>
+								<div class="height-40px"></div>
+								以上
+							</div>
+						</article>
+					</main>
+				</div>
+			</div>
+		</div>
+		<footer id="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="copyright">&copy; Powerd by Django</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Mobile Menu -->
+		<div class="overlay overlay-hugeinc">
+			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+			<nav>
+				<ul>
+                    {% for column in columns %}
+					<li><a href="{{ column.get_absolute_url }}">{{ column.name }}</a></li>
+                    {% endfor %}
+				</ul>
+			</nav>
+		</div>
+
+		<script src="{% static 'js/script.js' %}"></script>
+		
+	</body>
+</html>

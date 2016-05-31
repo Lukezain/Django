@@ -1,0 +1,11 @@
+#tit{
+    width:500px;
+    height:20px;
+    border:1px solid darkgreen;
+
+}
+#content{
+    width:800px;
+    height:80px;
+    border:1px solid yellowgreen;
+}

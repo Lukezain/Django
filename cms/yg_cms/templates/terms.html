@@ -1,0 +1,134 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Terms</title>
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Blogname Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+	/>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!----webfonts---->
+		<link href='http://fonts.useso.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700,300italic,400italic,600italic' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		  <script src="{% static 'js/jquery.min.js' %}"></script>
+		<!--end slider -->
+				<!--script-->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!---->
+</head>
+<body>
+<!---strat-banner---->
+<div class="banner">				
+	 <div class="header">  
+		  <div class="container">
+			  <div class="logo">
+					<a href="/"> <img src="{% static 'images/logo.png' %}" title="soup" /></a>
+			 </div>
+			 <!---start-top-nav---->
+			 <div class="top-menu">
+				  <span class="menu"> </span> 
+				   <ul>
+                       {% for column in columns %}
+						<li><a href="{{ column.get_absolute_url }}"><h4>{{ column.name }}</h4></a></li>
+						{% endfor %}
+						<div class="clearfix"> </div>
+				 </ul>
+			 </div>
+					<script>
+					$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+					});
+					</script>
+				<!---//End-top-nav---->					
+		 </div>
+	 </div>
+	 <div class="container">
+		 <div class="banner-head">
+			 <h1>WELCOME TO YOKIYO</h1>
+
+		 </div>		
+	 </div>
+</div>
+<!---//End-banner---->
+<div class="terms">
+	 <div class="container">
+		  <div class="terms-sec-head">
+				<h3>{{ column.name }}</h3>
+		  </div>
+         <div class="col-md-12">
+             {% for article in article_list %}
+				 <div class="content-grid">
+					 <div class="content-grid-head">
+						 <!--<h3>POST OF THE DAY</h3>-->
+
+						 <h4>{{ article.pub_date | date:"Y年-m月-d日" }}Posted by: {{ article.author }}</h4>
+						 <div class="clearfix"></div>
+					 </div>
+					 <div class="content-grid-info">
+						 <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+						 <p id="adjust_font">{{ article.content | safe | truncatechars:200 }}</p>
+
+						 <a class="bttn" href="{{ article.get_absolute_url }}">MORE</a>
+					</div>
+                 </div>
+                 <br>
+                 <br>
+             {% endfor %}
+     <div class="pages">
+					 <ul>
+						 {% for page_num in article_list.paginator.page_range %}
+                            {% ifequal page_num article_list.number %}
+                                <li><a href="">{{ page_num }}</a></li>
+                            {% else %}
+                                <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                            {% endifequal %}
+                        {% endfor %}
+					 </ul>
+     </div>
+
+</div>
+</div>
+</div>
+<div class="copywrite">
+	 <div class="container">
+	    <p>Copyright &copy; Powerd By Django</p>
+    </div>
+</div>
+
+<!---->
+<!---->
+<script type="text/javascript">
+		$(document).ready(function() {
+				/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>
